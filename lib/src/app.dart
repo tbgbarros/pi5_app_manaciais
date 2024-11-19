@@ -9,13 +9,21 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: kLightTheme.copyWith(
-        scaffoldBackgroundColor:
-            Colors.transparent, // Definindo o fundo transparente
+        scaffoldBackgroundColor: Colors.transparent,
+        //cor da fonte
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Colors.black),
+        ),
       ),
       darkTheme: kDarkTheme.copyWith(
         scaffoldBackgroundColor:
             Colors.transparent, // Fundo transparente no tema escuro
+        //cor da fonte
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: Colors.white),
+        ),
       ),
       home: const FeedPage(),
     );

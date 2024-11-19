@@ -30,7 +30,7 @@ class _FeedPageState extends State<FeedPage> {
           // Imagem de fundo
           SizedBox.expand(
             child: Image.asset(
-              'assets/images/ABS4.jpg', // Caminho da imagem logo
+              'assets/images/ABS3.jpg', // Caminho da imagem logo
               fit: BoxFit.cover,
             ),
           ),
@@ -49,7 +49,7 @@ class _FeedPageState extends State<FeedPage> {
                       random: index * 4);
                   return Card(
                     margin:
-                        const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
                     clipBehavior: Clip.antiAlias,
                     color: Colors.transparent,
                     shadowColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _FeedPageState extends State<FeedPage> {
                                 ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.7),
+                                color: Colors.white.withOpacity(0.8),
                                 borderRadius: BorderRadius.zero,
                                 border: Border.all(
                                   color: Colors.white.withOpacity(0.7),
