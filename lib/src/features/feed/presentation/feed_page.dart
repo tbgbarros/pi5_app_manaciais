@@ -30,7 +30,7 @@ class _FeedPageState extends State<FeedPage> {
           // Imagem de fundo
           SizedBox.expand(
             child: Image.asset(
-              'assets/images/ABS3.jpg', // Caminho da imagem logo
+              'assets/images/ABS.jpg', // Caminho da imagem logo
               fit: BoxFit.cover,
             ),
           ),
@@ -248,7 +248,7 @@ void _onBottomNavTapped(BuildContext context, int index) {
   } else if (index == 2) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => PerfilPage()),
+      MaterialPageRoute(builder: (context) => const PerfilPage()),
     );
   }
 }

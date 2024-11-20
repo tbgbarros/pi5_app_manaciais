@@ -3,6 +3,8 @@ import 'feed_page.dart';
 import 'perfil_page.dart';
 
 class MinisteriosPage extends StatelessWidget {
+  const MinisteriosPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,12 +12,14 @@ class MinisteriosPage extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MinistriesScreen(),
+      home: const MinistriesScreen(),
     );
   }
 }
 
 class MinistriesScreen extends StatefulWidget {
+  const MinistriesScreen({super.key});
+
   @override
   _MinistriesScreenState createState() => _MinistriesScreenState();
 }
@@ -38,12 +42,12 @@ class _MinistriesScreenState extends State<MinistriesScreen> {
     if (index == 0) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => FeedPage()),
+        MaterialPageRoute(builder: (context) => const FeedPage()),
       );
     } else if (index == 2) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => PerfilPage()),
+        MaterialPageRoute(builder: (context) => const PerfilPage()),
       );
     }
     // Se o índice for 1, permanece na página atual (Ministérios)
@@ -53,21 +57,21 @@ class _MinistriesScreenState extends State<MinistriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ministérios'),
+        title: const Text('Ministérios'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           ),
         ],
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         itemCount: ministries.length,
         itemBuilder: (context, index) {
           final ministry = ministries[index];
           return Card(
-            margin: EdgeInsets.symmetric(vertical: 8),
+            margin: const EdgeInsets.symmetric(vertical: 8),
             child: ListTile(
               leading: Image.asset(ministry['image'], width: 50),
               title: Text(ministry['name']),
@@ -75,11 +79,11 @@ class _MinistriesScreenState extends State<MinistriesScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(ministry['description']),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Row(
                     children: [
-                      Icon(Icons.people, size: 16),
-                      SizedBox(width: 4),
+                      const Icon(Icons.people, size: 16),
+                      const SizedBox(width: 4),
                       Text('${ministry['members']} Membros'),
                     ],
                   ),
@@ -91,7 +95,7 @@ class _MinistriesScreenState extends State<MinistriesScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addMinistry,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
